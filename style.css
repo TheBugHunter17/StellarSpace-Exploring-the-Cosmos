@@ -1,0 +1,494 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    overflow: hidden;
+}
+
+.container {
+    font-size: 6px;
+    width: 40em;
+    height: 40em;
+    position: relative;
+}
+
+img {
+    height: 130%;
+    width: 130%;
+}
+
+.sun {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 15em;
+    left: 15em;
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    box-shadow: 0 0 3em rgb(255, 128, 0);
+    animation: orbit 50s linear infinite;
+}
+
+.mercury,
+.venus,
+.earth,
+.moon,
+.mars,
+.jupiter,
+.saturn,
+.uranus,
+.neptune,
+.pluto {
+    position: absolute;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+    border-width: 0.1em 0.1em 0 0;
+    border-radius: 50%;
+}
+
+.mercury {
+    top: 12.5em;
+    left: 12.5em;
+    width: 15em;
+    height: 15em;
+    animation: orbit 68.7s linear infinite;
+}
+
+.venus {
+    top: 10em;
+    left: 10em;
+    width: 20em;
+    height: 20em;
+    animation: orbit 48.7s linear infinite;
+}
+
+.earth {
+    top: 6em;
+    left: 6em;
+    width: 28em;
+    height: 28em;
+    animation: orbit 36.5s linear infinite;
+}
+
+.moon {
+    top: 2em;
+    right: -1em;
+    width: 7em;
+    height: 7em;
+    animation: orbit 2.7s linear infinite;
+}
+
+.mars {
+    top: 2em;
+    left: 2.5em;
+    width: 36em;
+    height: 36em;
+    animation: orbit 26.5s linear infinite;
+}
+
+.jupiter {
+    top: -2em;
+    left: -2em;
+    width: 45em;
+    height: 45em;
+    animation: orbit 21s linear infinite;
+}
+
+.saturn {
+    top: -7em;
+    left: -7em;
+    width: 55em;
+    height: 55em;
+    animation: orbit 17s linear infinite;
+}
+
+.uranus {
+    top: -12em;
+    left: -12em;
+    width: 65em;
+    height: 65em;
+    animation: orbit 19s linear infinite;
+}
+
+.neptune {
+    top: -17em;
+    left: -17em;
+    width: 75em;
+    height: 75em;
+    animation: orbit 15s linear infinite;
+}
+
+.pluto {
+    top: -22em;
+    left: -22em;
+    width: 85em;
+    height: 85em;
+    animation: orbit 18s linear infinite;
+}
+
+.mercury::before,
+.venus::before,
+.earth::before,
+.moon::before,
+.mars::before,
+.jupiter::before,
+.saturn::before,
+.uranus::before,
+.neptune::before,
+.pluto::before {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    animation: orbit 30s linear infinite;
+}
+
+.mercury::before {
+    top: 1.5em;
+    right: 0.8em;
+    width: 2em;
+    height: 2em;
+    background-image: url('./images/mercury.png');
+    background-size: cover;
+}
+
+.venus::before {
+    top: 2em;
+    right: 2em;
+    width: 2em;
+    height: 2em;
+    background-image: url('./images/venus.png');
+    background-size: cover;
+}
+
+.earth::before {
+    top: 3em;
+    right: 0em;
+    width: 5em;
+    height: 5em;
+    background-image: url('./images/earth.png');
+    background-size: cover;
+}
+
+.moon::before {
+    top: 0.8em;
+    right: 0.2em;
+    width: 1.2em;
+    height: 1.2em;
+    background-image: url('./images/moon.png');
+    background-size: cover;
+}
+
+.mars::before {
+    top: 5em;
+    right: 3em;
+    width: 3em;
+    height: 3em;
+    background-image: url('./images/mars.png');
+    background-size: cover;
+}
+
+.jupiter::before {
+    top: 6em;
+    right: 3em;
+    width: 5em;
+    height: 5em;
+    background-image: url('./images/jupiter.png');
+    background-size: cover;
+}
+
+.saturn::before {
+    top: 7.5em;
+    right: 5em;
+    width: 4.5em;
+    height: 4.5em;
+    background-image: url('./images/saturn.png');
+    background-size: cover;
+}
+
+.uranus::before {
+    top: 9em;
+    right: 6.5em;
+    width: 4em;
+    height: 4em;
+    background-image: url('./images/uranus.png');
+    background-size: cover;
+}
+
+.neptune::before {
+    top: 10em;
+    right: 8em;
+    width: 4em;
+    height: 4em;
+    background-image: url('./images/neptune.png');
+    background-size: cover;
+}
+
+.pluto::before {
+    top: 11em;
+    right: 10em;
+    width: 4em;
+    height: 4em;
+    background-image: url('./images/pluto.png');
+    background-size: cover;
+}
+
+.star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+@keyframes orbit {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Button Styling */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+.button-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999; /* Ensure it's above other content */
+  }@import url("https://fonts.googleapis.com/css?family=Raleway");
+
+  :root {
+    --glow-color: hsl(186 100% 69%);
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  body {
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+  }
+  
+  .glowing-btn {
+    position: relative;
+    color: var(--glow-color);
+    cursor: pointer;
+    padding: 0.35em 1em;
+    border: 0.15em solid var(--glow-color);
+    border-radius: 0.45em;
+    background: none;
+    perspective: 2em;
+    font-family: "Raleway", sans-serif;
+    font-size: 2em;
+    font-weight: 900;
+    letter-spacing: 1em;
+  
+    -webkit-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+      0px 0px 0.5em 0px var(--glow-color);
+    -moz-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+      0px 0px 0.5em 0px var(--glow-color);
+    box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+      0px 0px 0.5em 0px var(--glow-color);
+    animation: border-flicker 2s linear infinite;
+  }
+  
+  .glowing-txt {
+    float: left;
+    margin-right: -0.8em;
+    -webkit-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+      0 0 0.45em var(--glow-color);
+    -moz-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+      0 0 0.45em var(--glow-color);
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color);
+    animation: text-flicker 3s linear infinite;
+  }
+  
+  .faulty-letter {
+    opacity: 0.5;
+    animation: faulty-flicker 2s linear infinite;
+  }
+  
+  .glowing-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.7;
+    filter: blur(1em);
+    transform: translateY(120%) rotateX(95deg) scale(1, 0.35);
+    background: var(--glow-color);
+    pointer-events: none;
+  }
+  
+  .glowing-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    z-index: -1;
+    background-color: var(--glow-color);
+    box-shadow: 0 0 2em 0.2em var(--glow-color);
+    transition: opacity 100ms linear;
+  }
+  
+  .glowing-btn:hover {
+    color: rgba(0, 0, 0, 0.8);
+    text-shadow: none;
+    animation: none;
+  }
+  
+  .glowing-btn:hover .glowing-txt {
+    animation: none;
+  }
+  
+  .glowing-btn:hover .faulty-letter {
+    animation: none;
+    text-shadow: none;
+    opacity: 1;
+  }
+  
+  .glowing-btn:hover:before {
+    filter: blur(1.5em);
+    opacity: 1;
+  }
+  
+  .glowing-btn:hover:after {
+    opacity: 1;
+  }
+  
+  @keyframes faulty-flicker {
+    0% {
+      opacity: 0.1;
+    }
+    2% {
+      opacity: 0.1;
+    }
+    4% {
+      opacity: 0.5;
+    }
+    19% {
+      opacity: 0.5;
+    }
+    21% {
+      opacity: 0.1;
+    }
+    23% {
+      opacity: 1;
+    }
+    80% {
+      opacity: 0.5;
+    }
+    83% {
+      opacity: 0.4;
+    }
+  
+    87% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes text-flicker {
+    0% {
+      opacity: 0.1;
+    }
+  
+    2% {
+      opacity: 1;
+    }
+  
+    8% {
+      opacity: 0.1;
+    }
+  
+    9% {
+      opacity: 1;
+    }
+  
+    12% {
+      opacity: 0.1;
+    }
+    20% {
+      opacity: 1;
+    }
+    25% {
+      opacity: 0.3;
+    }
+    30% {
+      opacity: 1;
+    }
+  
+    70% {
+      opacity: 0.7;
+    }
+    72% {
+      opacity: 0.2;
+    }
+  
+    77% {
+      opacity: 0.9;
+    }
+    100% {
+      opacity: 0.9;
+    }
+  }
+  
+  @keyframes border-flicker {
+    0% {
+      opacity: 0.1;
+    }
+    2% {
+      opacity: 1;
+    }
+    4% {
+      opacity: 0.1;
+    }
+  
+    8% {
+      opacity: 1;
+    }
+    70% {
+      opacity: 0.7;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .glowing-btn{
+      font-size: 1em;
+    }
+  }
